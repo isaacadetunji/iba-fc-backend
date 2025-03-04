@@ -1,12 +1,7 @@
 // Backend - server.js (Node.js + Express + MongoDB)
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-
-{
-  "type": "module",
-  "dependencies": { }
-}
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
