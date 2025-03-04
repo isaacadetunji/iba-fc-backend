@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://your_mongo_connection_string', {
+mongoose.connect('mongodb+srv://bukolaadetunji73:<fdSF52YV7voVcUX2>@cluster0.vxxcm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -57,7 +57,7 @@ app.post('/admin/reset', async (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-// Frontend - Modify BallotSystem.jsx to connect to backend
+// Frontend - Modify components-BallotSystem.jsx to connect to backend
 import React, { useState, useEffect } from 'react';
 
 const teams = ['Team A', 'Team B', 'Team C', 'Team D'];
@@ -67,7 +67,7 @@ function BallotSystem() {
   const [name, setName] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/players')
+    fetch('https://iba-fc-backend.onrender.com/players')
       .then(res => res.json())
       .then(data => setPlayers(data));
   }, []);
@@ -75,7 +75,7 @@ function BallotSystem() {
   const handleSelection = () => {
     if (!name) return alert('Enter a name');
 
-    fetch('http://localhost:5000/assign-team', {
+    fetch('https://iba-fc-backend.onrender.com/assign-team', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name })
