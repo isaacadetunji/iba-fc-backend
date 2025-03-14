@@ -9,7 +9,7 @@ app.use(cors());
 
 mongoose.connect('mongodb+srv://bukolaadetunji73:fdSF52YV7voVcUX2@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
 });
 
 const playerSchema = new mongoose.Schema({
