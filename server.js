@@ -7,9 +7,15 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://bukolaadetunji73:fdSF52YV7voVcUX2@cluster0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+import mongoose from 'mongoose';
+
+mongoose.connect('mongodb+srv://bukolaadetunji73:fdSF52YV7voVcUX2@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Cluster0', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('Connected to MongoDB');
+}).catch((err) => {
+    console.error('Error connecting to MongoDB', err);
 });
 
 const playerSchema = new mongoose.Schema({
